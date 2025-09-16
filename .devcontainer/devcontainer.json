@@ -13,6 +13,6 @@
     }
   },
   "forwardPorts": [3000],
-  "postCreateCommand": "npm install -g pnpm && if [ -f package.json ]; then pnpm install; fi && curl https://cursor.com/install -fsS | bash && npm install -g @google/gemini-cli"
+  "postCreateCommand": "echo 'export PATH=\"$HOME/.local/bin:$PATH\"' >> ~/.bashrc && source ~/.bashrc && npm install -g pnpm && if [ -f package.json ]; then pnpm install; fi && curl https://cursor.com/install -fsS | bash && npm install -g @google/gemini-cli"
 
 }
