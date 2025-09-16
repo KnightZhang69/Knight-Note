@@ -7,13 +7,15 @@
       "installPnpm": true
     }
   },
-  "postCreateCommand": "npm install -g cursor-cli gemini-cli",
+  "postCreateCommand": "curl https://cursor.com/install -fsS | bash && npm install -g @gemini-ai/cli && pnpm install",
   "customizations": {
     "vscode": {
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-typescript-next",
+        "GitHub.copilot"
       ]
     }
   }
