@@ -14,7 +14,13 @@
   - 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
   - Vps repo: https://github.com/KnightZhang69/VPS.git
 ### VPS Detail
-  - Address: 100.92.160.27:5900
-  - PWD: TkHa*nQ^a*eMg2%4
-  - Name: GNOME
-  - 远程电脑上的软件似乎与此“屏幕共享”版本不兼容
+#### Linux
+    - Address: 100.92.160.27:5900
+    - PWD: TkHa*nQ^a*eMg2%4
+    - Name: GNOME
+    - 远程电脑上的软件似乎与此“屏幕共享”版本不兼容
+#### Windows
+    - Address: 100.112.24.108
+    - Username: vum
+    - Password: User: vum | Password: yt/Wf)2;qBL*431R
+
