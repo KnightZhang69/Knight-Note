@@ -24,3 +24,21 @@
     - Username: vum
     - Password: User: vum | Password: yt/Wf)2;qBL*431R
 
+## Steps to Get Your Ngrok Auth Token
+### Sign up / Log in
+
+  - Go to ngrok.com and create a free account (or log in if you already have one).
+### Open the Dashboard
+
+  - Once logged in, go to your Ngrok Dashboard.
+  - Navigate to Auth → Authtoken (or directly [here](https://copilot.microsoft.com/chats/k9RfXPgM46do5sh2gAHJW#:~:text=(or%20directly-,here,-).)).
+  - Copy Your Token
+
+### Add It to GitHub Secrets
+
+  - In your GitHub repo, go to Settings → Secrets and variables → Actions → New repository secret.
+
+  - Name it NGROK_AUTH_TOKEN.
+
+  - Paste the token value.
+  - Save it.
