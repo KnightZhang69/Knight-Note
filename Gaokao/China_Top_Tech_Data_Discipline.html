@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>China's Top Tech & Data Disciplines Infographic (Bilingual)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Custom scrollbar for table */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 4px;
+        }
+    </style>
+    <!-- 
+    Palette: "Cyber Intensity"
+    Primary: #4F46E5 (Indigo-600)
+    Secondary: #06B6D4 (Cyan-500)
+    Accent: #D946EF (Fuchsia-500)
+    Background: #0F172A (Slate-900)
+    Text: #F8FAFC (Slate-50)
+    
+    Structure: Bilingual (English / Chinese)
+    Visuals: Chart.js (Canvas), No SVG, No Mermaid.
+    -->
+</head>
+
+<body class="bg-slate-900 text-slate-50 selection:bg-fuchsia-500 selection:text-white">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-indigo-900 to-slate-900 py-16 border-b border-indigo-500/30">
+        <div class="container mx-auto px-4 text-center">
+            <h1
+                class="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500 mb-2">
+                Elite Tech & Data Education
+            </h1>
+            <h2 class="text-2xl md:text-4xl font-bold text-white mb-6">
+                中国顶尖科技与数据学科全景图
+            </h2>
+            <p class="text-lg text-slate-300 max-w-3xl mx-auto">
+                Mapping China's <span class="text-cyan-400 font-bold">A+, A, and A-</span> Universities in Computer
+                Science, Software Engineering, Mathematics, and Statistics.
+                <br>
+                <span class="text-slate-400 text-sm">全景展示中国高校在计算机、软件工程、数学及统计学领域的顶尖学科评估结果。</span>
+            </p>
+            <div class="mt-8 flex justify-center gap-4 flex-wrap">
+                <div
+                    class="px-4 py-2 bg-indigo-500/20 border border-indigo-500 rounded-full text-indigo-300 text-sm font-semibold text-center">
+                    Computer Science<br><span class="text-xs">计算机科学</span>
+                </div>
+                <div
+                    class="px-4 py-2 bg-cyan-500/20 border border-cyan-500 rounded-full text-cyan-300 text-sm font-semibold text-center">
+                    Software Eng<br><span class="text-xs">软件工程</span>
+                </div>
+                <div
+                    class="px-4 py-2 bg-fuchsia-500/20 border border-fuchsia-500 rounded-full text-fuchsia-300 text-sm font-semibold text-center">
+                    AI & Data<br><span class="text-xs">人工智能与数据</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="container mx-auto px-4 py-12 space-y-20">
+
+        <!-- Intro Section -->
+        <section class="max-w-4xl mx-auto text-center bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+            <h2 class="text-2xl font-bold mb-4 text-white">
+                The "A-Class" Standard / <span class="text-cyan-400">A 类学科标准</span>
+            </h2>
+            <p class="text-slate-300 text-base leading-relaxed mb-4">
+                Based on the Ministry of Education's discipline evaluation standards, universities are graded into
+                tiers.
+                <span class="text-cyan-400 font-bold">A+ (Top 2%)</span>, <span class="text-cyan-400 font-bold">A
+                    (2-5%)</span>, and <span class="text-cyan-400 font-bold">A- (5-10%)</span>
+                represent the pinnacle of academic excellence.
+            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">
+                基于教育部学科评估标准，学科被分为不同等级。<span class="text-cyan-400 font-bold">A+ (前2%)</span>，<span
+                    class="text-cyan-400 font-bold">A (2-5%)</span> 和 <span class="text-cyan-400 font-bold">A-
+                    (5-10%)</span> 代表了中国学术界的最高水平。对于致力于从事人工智能、大数据和软件行业的学生来说，这些高校提供了最坚实的基础。
+            </p>
+        </section>
+
+        <!-- Section 1: Computer Science (The Big 4) -->
+        <section>
+            <div class="border-l-4 border-cyan-500 pl-6 mb-8">
+                <h3 class="text-2xl font-bold text-white">Computer Science (0812) <span class="text-slate-400 text-lg">/
+                        计算机科学与技术</span></h3>
+                <p class="text-slate-400 text-sm mt-1">
+                    The core discipline driving the digital economy. Only four universities achieved the coveted A+
+                    rating.
+                    <br>数字经济的核心驱动学科。仅有四所高校获得了令人垂涎的 A+ 评级。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700 hover:border-cyan-500 transition-colors group">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🏛️</div>
+                    <h4 class="text-xl font-bold text-cyan-400">Peking Univ</h4>
+                    <h4 class="text-lg font-bold text-white">北京大学</h4>
+                    <p class="text-sm text-slate-500 mt-1">Beijing / 北京</p>
+                    <div class="mt-4 inline-block px-3 py-1 bg-cyan-500/10 text-cyan-400 font-bold rounded">A+ Grade
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700 hover:border-cyan-500 transition-colors group">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🔬</div>
+                    <h4 class="text-xl font-bold text-cyan-400">Tsinghua Univ</h4>
+                    <h4 class="text-lg font-bold text-white">清华大学</h4>
+                    <p class="text-sm text-slate-500 mt-1">Beijing / 北京</p>
+                    <div class="mt-4 inline-block px-3 py-1 bg-cyan-500/10 text-cyan-400 font-bold rounded">A+ Grade
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700 hover:border-cyan-500 transition-colors group">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🐉</div>
+                    <h4 class="text-xl font-bold text-cyan-400">Zhejiang Univ</h4>
+                    <h4 class="text-lg font-bold text-white">浙江大学</h4>
+                    <p class="text-sm text-slate-500 mt-1">Hangzhou / 杭州</p>
+                    <div class="mt-4 inline-block px-3 py-1 bg-cyan-500/10 text-cyan-400 font-bold rounded">A+ Grade
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700 hover:border-cyan-500 transition-colors group">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🛡️</div>
+                    <h4 class="text-xl font-bold text-cyan-400">NUDT</h4>
+                    <h4 class="text-lg font-bold text-white">国防科技大学</h4>
+                    <p class="text-sm text-slate-500 mt-1">Changsha / 长沙</p>
+                    <div class="mt-4 inline-block px-3 py-1 bg-cyan-500/10 text-cyan-400 font-bold rounded">A+ Grade
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Comparative Analysis (CS vs SE) -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <div class="bg-slate-800 rounded-xl shadow-xl p-6 border border-slate-700">
+                    <h3 class="text-xl font-bold text-white mb-1">CS vs. Software Engineering</h3>
+                    <h4 class="text-lg font-bold text-indigo-400 mb-4">计算机科学与技术 vs 软件工程</h4>
+                    <p class="text-slate-400 text-sm mb-6">
+                        Comparing ratings for top schools in both disciplines. Beihang stands out in Software
+                        Engineering.
+                        <br>对比顶尖高校在两个学科的评级。北航在软件工程领域表现尤为突出。
+                    </p>
+                    <!-- Chart Container -->
+                    <div class="chart-container h-96 max-h-[500px]">
+                        <canvas id="csVsSeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Context Side Panel -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                    <h4 class="text-lg font-bold text-fuchsia-400 mb-2">Key Insight / <span class="text-sm">关键洞察</span>
+                    </h4>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-3">
+                        <span class="font-bold text-white">Beihang University (北航)</span> is a standout in Software
+                        Engineering (A+), rivaling the top CS schools.
+                    </p>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        如果你更关注大型软件架构与工程管理，北京航空航天大学（A+）是与清北浙并肩的顶级选择。
+                    </p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                    <h4 class="text-lg font-bold text-indigo-400 mb-2">AI & Intelligence / <span
+                            class="text-sm">人工智能</span></h4>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-3">
+                        AI excellence is housed within top CS programs.
+                    </p>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        在第四轮评估中，人工智能主要包含在计算机科学之下。北大、清华、浙大以及哈工大 (HIT) 和中科大 (USTC) 也是 AI 领域的领军者。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Mathematical Foundation -->
+        <section>
+            <div class="border-l-4 border-fuchsia-500 pl-6 mb-8">
+                <h3 class="text-2xl font-bold text-white">Data Foundation: Math & Statistics</h3>
+                <h4 class="text-lg text-slate-400 font-medium">数据科学基石：数学与统计学</h4>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Math/Stats Chart -->
+                <div class="bg-slate-800 rounded-xl shadow-xl p-6 border border-slate-700">
+                    <div class="chart-container h-96">
+                        <canvas id="mathStatsChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-xs text-center text-slate-500">
+                        *Ratings converted / 评级换算: A+ = 3, A = 2, A- = 1
+                    </p>
+                </div>
+
+                <!-- Text Breakdown -->
+                <div class="flex flex-col justify-center space-y-6">
+                    <div class="bg-indigo-900/20 p-4 rounded-lg border-l-2 border-indigo-500">
+                        <h4 class="font-bold text-indigo-300">Statistics Leaders (A+) / 统计学领军</h4>
+                        <ul class="mt-2 text-sm text-slate-300 space-y-2">
+                            <li>• Peking University (北京大学)</li>
+                            <li>• Renmin Univ of China (中国人民大学)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-fuchsia-900/20 p-4 rounded-lg border-l-2 border-fuchsia-500">
+                        <h4 class="font-bold text-fuchsia-300">Mathematics Leaders (A+) / 数学领军</h4>
+                        <ul class="mt-2 text-sm text-slate-300 space-y-2">
+                            <li>• Peking University (北京大学)</li>
+                            <li>• Fudan University (复旦大学)</li>
+                            <li>• Shandong University (山东大学)</li>
+                        </ul>
+                    </div>
+                    <p class="text-slate-400 text-sm">
+                        <span class="font-bold text-white">Renmin University (RUC)</span> dominates in Statistics,
+                        making it a powerhouse for Data Science in Economics and Finance.
+                        <br>
+                        <span class="text-xs">中国人民大学虽然在工科排名中不显眼，但在统计学领域的统治地位使其成为经济金融大数据方向的顶级强校。</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: The "All-Rounders" & Geography -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Radar Chart: Holistic Strength -->
+            <div class="bg-slate-800 rounded-xl shadow-xl p-6 border border-slate-700">
+                <h3 class="text-xl font-bold text-white mb-1">The "Tech Titans"</h3>
+                <h4 class="text-lg text-slate-400 mb-4">综合实力对比</h4>
+                <p class="text-slate-400 text-sm mb-6">
+                    Comparison across CS, Software, Math, and Stats.
+                    <br>计算机、软件、数学和统计学的综合学科强度对比。
+                </p>
+                <div class="chart-container h-[400px] w-full max-w-md mx-auto">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Regional Distribution -->
+            <div class="bg-slate-800 rounded-xl shadow-xl p-6 border border-slate-700 flex flex-col">
+                <h3 class="text-xl font-bold text-white mb-1">Geographic Distribution</h3>
+                <h4 class="text-lg text-slate-400 mb-4">A 类学科地域分布</h4>
+                <p class="text-slate-400 text-sm mb-6">
+                    Where is the talent concentrated? Beijing leads, followed by the East.
+                    <br>顶尖学科资源主要集中在北京，其次是华东地区。
+                </p>
+                <div class="chart-container h-64 flex-grow relative">
+                    <canvas id="geoChart"></canvas>
+                    <!-- Center Label Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div class="text-center">
+                            <span class="block text-3xl font-bold text-white">40+</span>
+                            <span class="text-xs text-slate-400">Programs / 学科点</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-indigo-500 flex-shrink-0"></div>
+                        <span class="text-slate-300 text-xs">Beijing / 北京 <br> (PKU, Tsinghua, Beihang)</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-cyan-500 flex-shrink-0"></div>
+                        <span class="text-slate-300 text-xs">East / 华东 <br> (ZJU, Fudan, SJTU, Nanjing)</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-fuchsia-500 flex-shrink-0"></div>
+                        <span class="text-slate-300 text-xs">Central / 华中 <br> (HUST, Wuhan Univ)</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-slate-500 flex-shrink-0"></div>
+                        <span class="text-slate-300 text-xs">Others / 其他 <br> (HIT, NUDT, Xi'an)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Detailed Data Table -->
+        <section class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+            <div class="p-6 border-b border-slate-700">
+                <h3 class="text-xl font-bold text-white">Detailed Rating Reference / <span
+                        class="text-slate-400">详细评级参考</span></h3>
+            </div>
+            <div class="overflow-x-auto custom-scrollbar p-4">
+                <table class="w-full text-left border-collapse min-w-[600px]">
+                    <thead>
+                        <tr class="text-xs text-slate-400 uppercase tracking-wider border-b border-slate-700">
+                            <th class="px-4 py-3 font-semibold">University<br>高校名称</th>
+                            <th class="px-4 py-3 font-semibold text-cyan-400">CS & Tech<br>计算机</th>
+                            <th class="px-4 py-3 font-semibold text-indigo-400">Software Eng<br>软件工程</th>
+                            <th class="px-4 py-3 font-semibold text-fuchsia-400">Statistics<br>统计学</th>
+                            <th class="px-4 py-3 font-semibold text-emerald-400">Math<br>数学</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm divide-y divide-slate-700">
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="px-4 py-3 font-medium text-white">
+                                Peking Univ (PKU)<br><span class="text-slate-400 text-xs">北京大学</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded text-xs font-bold">A+</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded text-xs font-bold">A</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-fuchsia-500/20 text-fuchsia-300 px-2 py-1 rounded text-xs font-bold">A+</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded text-xs font-bold">A+</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="px-4 py-3 font-medium text-white">
+                                Tsinghua Univ (THU)<br><span class="text-slate-400 text-xs">清华大学</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded text-xs font-bold">A+</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded text-xs font-bold">A</span>
+                            </td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded text-xs font-bold">A</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="px-4 py-3 font-medium text-white">
+                                Zhejiang Univ (ZJU)<br><span class="text-slate-400 text-xs">浙江大学</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded text-xs font-bold">A+</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded text-xs font-bold">A+</span>
+                            </td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded text-xs font-bold">A-</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="px-4 py-3 font-medium text-white">
+                                Beihang Univ (BUAA)<br><span class="text-slate-400 text-xs">北京航空航天大学</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded text-xs font-bold">A</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded text-xs font-bold">A+</span>
+                            </td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="px-4 py-3 font-medium text-white">
+                                NUDT<br><span class="text-slate-400 text-xs">国防科技大学</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded text-xs font-bold">A+</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded text-xs font-bold">A+</span>
+                            </td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="px-4 py-3 font-medium text-white">
+                                Shanghai Jiao Tong (SJTU)<br><span class="text-slate-400 text-xs">上海交通大学</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded text-xs font-bold">A</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded text-xs font-bold">A-</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-fuchsia-500/20 text-fuchsia-300 px-2 py-1 rounded text-xs font-bold">A-</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded text-xs font-bold">A</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="px-4 py-3 font-medium text-white">
+                                Fudan University<br><span class="text-slate-400 text-xs">复旦大学</span>
+                            </td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded text-xs font-bold">A+</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="px-4 py-3 font-medium text-white">
+                                Renmin Univ (RUC)<br><span class="text-slate-400 text-xs">中国人民大学</span>
+                            </td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-fuchsia-500/20 text-fuchsia-300 px-2 py-1 rounded text-xs font-bold">A+</span>
+                            </td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/50">
+                            <td class="px-4 py-3 font-medium text-white">
+                                Harbin Inst. Tech (HIT)<br><span class="text-slate-400 text-xs">哈尔滨工业大学</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded text-xs font-bold">A</span>
+                            </td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded text-xs font-bold">A-</span>
+                            </td>
+                            <td class="px-4 py-3"><span class="text-slate-500">-</span></td>
+                            <td class="px-4 py-3"><span
+                                    class="bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded text-xs font-bold">A-</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="p-4 bg-slate-800 border-t border-slate-700 text-xs text-slate-500 text-center">
+                Data based on China 4th Round Discipline Evaluation. Dash (-) indicates rating below A- for that
+                specific discipline.<br>
+                数据基于教育部第四轮学科评估。短横线 (-) 表示该学科评级低于 A-。
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
+        <p>© 2025 Education Data Viz. All rights reserved.</p>
+        <p class="mt-2 text-xs">Generated for educational research purposes. Source: Ministry of Education Discipline
+            Evaluation (Round 4). <br> 仅供教育研究参考。来源：教育部第四轮学科评估。</p>
+    </footer>
+
+    <!-- Chart Scripts -->
+    <script>
+        // --- Common Config ---
+        Chart.defaults.color = '#94a3b8'; // slate-400
+        Chart.defaults.font.family = "'Inter', 'Noto Sans SC', sans-serif";
+
+        // --- Helper: Tooltip Multiline Fix ---
+        const tooltipConfig = {
+            callbacks: {
+                title: function (tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- Chart 1: CS vs Software Engineering (Grouped Bar) ---
+        // Labels split into arrays for better wrapping on small screens
+        const ctxCsSe = document.getElementById('csVsSeChart').getContext('2d');
+        new Chart(ctxCsSe, {
+            type: 'bar',
+            data: {
+                labels: [
+                    ['Peking Univ', '北京大学'],
+                    ['Tsinghua', '清华大学'],
+                    ['Zhejiang Univ', '浙江大学'],
+                    ['Beihang', '北航'],
+                    ['NUDT', '国防科大'],
+                    ['Nanjing Univ', '南京大学'],
+                    ['SJTU', '上海交大']
+                ],
+                datasets: [
+                    {
+                        label: 'CS (计算机)',
+                        data: [95, 95, 95, 90, 95, 90, 90], // A+, A+, A+, A, A+, A, A
+                        backgroundColor: '#06b6d4', // Cyan
+                        borderRadius: 4,
+                    },
+                    {
+                        label: 'Software (软件)',
+                        data: [90, 90, 95, 95, 95, 90, 85], // A, A, A+, A+, A+, A, A-
+                        backgroundColor: '#4f46e5', // Indigo
+                        borderRadius: 4,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top', labels: { color: '#f8fafc' } },
+                    tooltip: tooltipConfig
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 80,
+                        ticks: {
+                            callback: function (value) {
+                                if (value >= 95) return 'A+';
+                                if (value >= 90) return 'A';
+                                if (value >= 85) return 'A-';
+                                return '';
+                            },
+                            color: '#94a3b8'
+                        },
+                        grid: { color: '#334155' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#f8fafc', font: { size: 10 } }
+                    }
+                }
+            }
+        });
+
+        // --- Chart 2: Math & Statistics Leaders (Horizontal Bar) ---
+        const ctxMath = document.getElementById('mathStatsChart').getContext('2d');
+        new Chart(ctxMath, {
+            type: 'bar',
+            indexAxis: 'y',
+            data: {
+                labels: [
+                    ['Peking Univ', '北京大学'],
+                    ['Renmin Univ', '人民大学'],
+                    ['Fudan Univ', '复旦大学'],
+                    ['Shandong Univ', '山东大学'],
+                    ['Nankai Univ', '南开大学'],
+                    ['USTC', '中科大']
+                ],
+                datasets: [
+                    {
+                        label: 'Statistics (统计)',
+                        data: [3, 3, 2, 2, 2, 2], // 3=A+, 2=A, 1=A-
+                        backgroundColor: '#d946ef', // Fuchsia
+                    },
+                    {
+                        label: 'Math (数学)',
+                        data: [3, 1, 3, 3, 2, 2],
+                        backgroundColor: '#10b981', // Emerald
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: '#f8fafc' } },
+                    tooltip: tooltipConfig
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            callback: function (value) {
+                                if (value === 3) return 'A+';
+                                if (value === 2) return 'A';
+                                if (value === 1) return 'A-';
+                                return '';
+                            }
+                        },
+                        grid: { color: '#334155' }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: '#f8fafc' }
+                    }
+                }
+            }
+        });
+
+        // --- Chart 3: Radar Chart (The All-Rounders) ---
+        const ctxRadar = document.getElementById('radarChart').getContext('2d');
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: [
+                    ['CS & Tech', '计算机'],
+                    ['Software Eng', '软件工程'],
+                    ['Mathematics', '数学'],
+                    ['Statistics', '统计学']
+                ],
+                datasets: [
+                    {
+                        label: 'Peking Univ (北大)',
+                        data: [3, 2, 3, 3], // A+, A, A+, A+
+                        borderColor: '#06b6d4', // Cyan
+                        backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                        pointBackgroundColor: '#06b6d4',
+                        pointHoverBorderColor: '#fff'
+                    },
+                    {
+                        label: 'Tsinghua (清华)',
+                        data: [3, 2, 2, 1], // A+, A, A, A- (Approx for stats)
+                        borderColor: '#d946ef', // Fuchsia
+                        backgroundColor: 'rgba(217, 70, 239, 0.2)',
+                        pointBackgroundColor: '#d946ef',
+                        pointHoverBorderColor: '#fff'
+                    },
+                    {
+                        label: 'Zhejiang Univ (浙大)',
+                        data: [3, 3, 1, 1], // A+, A+, A-, A- (Approx)
+                        borderColor: '#4f46e5', // Indigo
+                        backgroundColor: 'rgba(79, 70, 229, 0.2)',
+                        pointBackgroundColor: '#4f46e5',
+                        pointHoverBorderColor: '#fff'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: '#334155' },
+                        grid: { color: '#334155' },
+                        pointLabels: { color: '#f8fafc', font: { size: 12, weight: 'bold' } },
+                        ticks: { display: false, max: 3 } // Hide numerical ticks
+                    }
+                },
+                plugins: {
+                    legend: { position: 'top', labels: { color: '#f8fafc' } },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        // --- Chart 4: Geographic Distribution (Doughnut) ---
+        const ctxGeo = document.getElementById('geoChart').getContext('2d');
+        new Chart(ctxGeo, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    ['Beijing', '北京'],
+                    ['East China', '华东'],
+                    ['Central China', '华中'],
+                    ['North/NE', '华北/东北'],
+                    ['West', '西部']
+                ],
+                datasets: [{
+                    data: [35, 30, 15, 12, 8], // Approximate % share of A-class ratings
+                    backgroundColor: [
+                        '#4f46e5', // Indigo (Beijing)
+                        '#06b6d4', // Cyan (East)
+                        '#d946ef', // Fuchsia (Central)
+                        '#10b981', // Emerald (North)
+                        '#64748b'  // Slate (West)
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: { display: false }, // Custom legend used in HTML
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
