@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>China's Top Tech Disciplines: Interactive Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Chosen Palette: Warm Harmony -->
+    <!-- 
+        Background: #FAFAF9 (Stone-50) - Warm neutral base
+        Surface: #FFFFFF (White) - Cards and containers
+        Primary Text: #44403C (Stone-700) - Soft high contrast
+        Secondary Text: #78716C (Stone-500) - Muted details
+        Accents: 
+            - Indigo: #6366F1 (Primary Interactive)
+            - Teal: #14B8A6 (Data Viz A)
+            - Rose: #F43F5E (Data Viz B)
+            - Amber: #F59E0B (Data Viz C)
+    -->
+
+    <!-- Application Structure Plan: 
+        1. **Hero Section**: Sets the context (Elite Education) with a clean, calm aesthetic.
+        2. **Interactive Discipline Analysis (Tabs)**: 
+           - User Goal: Explore specific fields (CS, Software, Math, Stats).
+           - Interaction: Tab switching updates a Bar Chart of top schools for that specific field.
+           - Why: Users often care about one major at a time. Grouping by discipline reduces cognitive load.
+        3. **Holistic University Profiler (Dropdown + Radar)**:
+           - User Goal: See the "shape" of a specific university's strength.
+           - Interaction: Select a university to update a Radar Chart showing its balance across all 4 disciplines.
+           - Why: Shows the difference between a "specialist" (like RUC) and a "generalist" (like PKU).
+        4. **Comparative Analysis Tool**:
+           - User Goal: Head-to-head comparison.
+           - Interaction: Two selectors to pit universities against each other on a Grouped Bar Chart.
+           - Why: Critical for decision making (e.g., "Should I go to ZJU or SJTU?").
+        5. **Regional Distribution (Doughnut)**:
+           - User Goal: Understand geographic concentration.
+           - Interaction: Filter/Highlight regions.
+        6. **Reference Data Grid**: Searchable/Sortable list for raw data access.
+    -->
+
+    <!-- Visualization & Content Choices:
+        1. **Discipline Rankings -> Goal: Compare -> Horizontal Bar Chart**: Best for readable labels (long university names) and comparing values.
+        2. **University Profile -> Goal: Relationships/Shape -> Radar Chart**: Standard for showing multi-axial strengths (the 4 disciplines).
+        3. **Comparison -> Goal: Compare -> Grouped Vertical Bar Chart**: Classic method to compare two entities across multiple categories.
+        4. **Geography -> Goal: Inform/Organize -> Doughnut Chart**: Shows the "whole" broken into regional parts.
+        5. **Confirming NO SVG/Mermaid**: All charts use Chart.js (Canvas). Icons are Unicode or CSS shapes.
+    -->
+
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: #FAFAF9;
+            color: #44403C;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-tab {
+            transition: all 0.2s ease;
+        }
+
+        .btn-tab.active {
+            background-color: #6366F1;
+            color: white;
+            border-color: #6366F1;
+        }
+
+        /* Custom scrollbar for tables */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #F5F5F4;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #D6D3D1;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-stone-200 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl">🎓</span>
+                <span class="font-bold text-stone-800 text-lg md:text-xl tracking-tight">China EduInsights</span>
+            </div>
+            <div class="hidden md:flex gap-6 text-sm font-medium text-stone-500">
+                <a href="#disciplines" class="hover:text-indigo-600 transition-colors">Disciplines</a>
+                <a href="#profiles" class="hover:text-indigo-600 transition-colors">Profiles</a>
+                <a href="#compare" class="hover:text-indigo-600 transition-colors">Compare</a>
+                <a href="#data" class="hover:text-indigo-600 transition-colors">Data</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-white pb-12 pt-12 md:pt-20 border-b border-stone-100">
+        <div class="container mx-auto px-4 text-center max-w-4xl">
+            <div
+                class="inline-block px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-semibold mb-4 border border-indigo-100 uppercase tracking-wide">
+                4th Round Discipline Evaluation
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-stone-800 mb-6 leading-tight">
+                The Pinnacle of Chinese Tech Education
+                <br>
+                <span class="text-stone-400 font-light text-2xl md:text-4xl block mt-2">中国顶尖科技学科全景</span>
+            </h1>
+            <p class="text-lg text-stone-500 mb-8 leading-relaxed max-w-2xl mx-auto">
+                Explore the elite "A-Class" universities defining the future of Computer Science, Software Engineering,
+                AI, and Mathematics.
+                <br>
+                <span class="text-sm opacity-80">探索定义计算机、软件工程、人工智能与数学未来的顶尖 A 类高校。</span>
+            </p>
+            <div class="flex justify-center gap-4 text-sm font-medium text-stone-400">
+                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-cyan-500"></span> CS Leaders
+                </div>
+                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-indigo-500"></span> Software
+                    Giants</div>
+                <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-rose-500"></span> Math
+                    Foundation</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12 space-y-16">
+
+        <!-- SECTION 1: Discipline Explorer -->
+        <section id="disciplines" class="scroll-mt-24">
+            <div class="grid md:grid-cols-12 gap-8">
+                <!-- Intro/Controls -->
+                <div class="md:col-span-4 lg:col-span-3 space-y-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-stone-800 mb-2">Discipline Analysis</h2>
+                        <h3 class="text-sm font-medium text-stone-500 uppercase tracking-wider mb-4">学科深度分析</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-6">
+                            Select a discipline to reveal the top-performing institutions. Note that <strong>A+</strong>
+                            represents the top 2% of programs nationwide.
+                            <br><span class="text-xs text-stone-400 mt-1 block">选择学科以查看顶尖高校。A+ 代表全国前 2% 的顶尖水平。</span>
+                        </p>
+                    </div>
+
+                    <!-- Vertical Tab List -->
+                    <div class="flex flex-col gap-2">
+                        <button onclick="updateDisciplineChart('cs')" id="btn-cs"
+                            class="btn-tab active text-left px-4 py-3 rounded-lg border border-stone-200 bg-white shadow-sm hover:shadow-md font-medium flex justify-between items-center group">
+                            <span>💻 Computer Science <span
+                                    class="text-xs text-stone-400 block group-hover:text-indigo-100">计算机科学与技术</span></span>
+                            <span class="text-lg opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                        </button>
+                        <button onclick="updateDisciplineChart('se')" id="btn-se"
+                            class="btn-tab text-left px-4 py-3 rounded-lg border border-stone-200 bg-white shadow-sm hover:shadow-md font-medium flex justify-between items-center group">
+                            <span>⚙️ Software Eng <span
+                                    class="text-xs text-stone-400 block group-hover:text-indigo-100">软件工程</span></span>
+                            <span class="text-lg opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                        </button>
+                        <button onclick="updateDisciplineChart('stat')" id="btn-stat"
+                            class="btn-tab text-left px-4 py-3 rounded-lg border border-stone-200 bg-white shadow-sm hover:shadow-md font-medium flex justify-between items-center group">
+                            <span>📈 Statistics <span
+                                    class="text-xs text-stone-400 block group-hover:text-indigo-100">统计学</span></span>
+                            <span class="text-lg opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                        </button>
+                        <button onclick="updateDisciplineChart('math')" id="btn-math"
+                            class="btn-tab text-left px-4 py-3 rounded-lg border border-stone-200 bg-white shadow-sm hover:shadow-md font-medium flex justify-between items-center group">
+                            <span>📐 Mathematics <span
+                                    class="text-xs text-stone-400 block group-hover:text-indigo-100">数学</span></span>
+                            <span class="text-lg opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Visualization -->
+                <div class="md:col-span-8 lg:col-span-9">
+                    <div class="bg-white rounded-xl shadow-sm border border-stone-200 p-6 h-full flex flex-col">
+                        <div class="mb-4 flex justify-between items-end">
+                            <div>
+                                <h4 id="chart-title" class="text-lg font-bold text-stone-800">Top Rated Programs</h4>
+                                <p id="chart-desc" class="text-sm text-stone-500">Showing A+ and A rated universities.
+                                </p>
+                            </div>
+                            <div class="text-xs font-mono text-stone-400 bg-stone-100 px-2 py-1 rounded">Score: A+=95,
+                                A=90, A-=85</div>
+                        </div>
+                        <!-- Chart Container -->
+                        <div class="chart-container flex-grow h-80 md:h-96 max-h-[500px]">
+                            <canvas id="disciplineChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: University Profiler (Radar) -->
+        <section id="profiles"
+            class="scroll-mt-24 bg-stone-50 md:bg-white md:border md:border-stone-200 md:shadow-sm md:rounded-2xl md:p-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Chart Side -->
+                <div class="order-2 md:order-1">
+                    <div class="chart-container h-80 md:h-[400px] w-full max-w-md mx-auto">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Controls & Info Side -->
+                <div class="order-1 md:order-2 space-y-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-stone-800 mb-2">Holistic Profile</h2>
+                        <h3 class="text-sm font-medium text-stone-500 uppercase tracking-wider mb-4">综合实力画像</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            Analyze the balance of a university across all four key disciplines.
+                            Does it specialize in one area, or is it a comprehensive powerhouse?
+                            <br><span
+                                class="text-xs text-stone-400 mt-1 block">分析高校在四个关键学科上的均衡性。它是单科突出的专家，还是全能型强校？</span>
+                        </p>
+                    </div>
+
+                    <div class="bg-stone-50 border border-stone-200 p-4 rounded-xl">
+                        <label class="block text-xs font-bold text-stone-500 uppercase mb-2">Select University /
+                            选择高校</label>
+                        <select id="uni-select" onchange="updateRadarChart()"
+                            class="w-full p-3 bg-white border border-stone-300 rounded-lg text-stone-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-shadow">
+                            <!-- Populated by JS -->
+                        </select>
+                    </div>
+
+                    <div id="uni-stats" class="grid grid-cols-2 gap-4">
+                        <!-- Populated by JS -->
+                        <div class="p-3 bg-indigo-50 rounded-lg border border-indigo-100 text-center">
+                            <div class="text-xs text-indigo-400 uppercase font-bold">CS Score</div>
+                            <div class="text-xl font-bold text-indigo-700">A+</div>
+                        </div>
+                        <div class="p-3 bg-stone-100 rounded-lg border border-stone-200 text-center">
+                            <div class="text-xs text-stone-400 uppercase font-bold">Region</div>
+                            <div class="text-xl font-bold text-stone-600">Beijing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Compare & Region -->
+        <section id="compare" class="scroll-mt-24 grid lg:grid-cols-3 gap-8">
+
+            <!-- Comparison Tool -->
+            <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-stone-200 p-6">
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold text-stone-800">Head-to-Head Comparison</h2>
+                    <p class="text-sm text-stone-500">Compare two universities directly across disciplines. <span
+                            class="text-xs text-stone-400">高校直接对比</span></p>
+                </div>
+
+                <div class="flex gap-4 mb-6">
+                    <select id="comp-1" onchange="updateCompareChart()"
+                        class="flex-1 p-2 text-sm border border-stone-300 rounded-lg bg-stone-50">
+                        <!-- Populated JS -->
+                    </select>
+                    <div class="flex items-center text-stone-400 font-bold">VS</div>
+                    <select id="comp-2" onchange="updateCompareChart()"
+                        class="flex-1 p-2 text-sm border border-stone-300 rounded-lg bg-stone-50">
+                        <!-- Populated JS -->
+                    </select>
+                </div>
+
+                <div class="chart-container h-64 md:h-72">
+                    <canvas id="compareChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Regional Map -->
+            <div class="bg-white rounded-xl shadow-sm border border-stone-200 p-6 flex flex-col">
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold text-stone-800">Geographic Hubs</h2>
+                    <p class="text-sm text-stone-500">Where are the A-Class resources? <span
+                            class="text-xs text-stone-400">学科地域分布</span></p>
+                </div>
+                <div class="chart-container flex-grow h-64 relative">
+                    <canvas id="regionChart"></canvas>
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div class="text-center bg-white/80 p-2 rounded-full backdrop-blur-sm">
+                            <div class="text-2xl font-bold text-stone-700">40+</div>
+                            <div class="text-[10px] text-stone-400 uppercase">Programs</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 text-xs text-stone-400 text-center">
+                    Beijing & East China contain >60% of top resources.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Data Table -->
+        <section id="data" class="scroll-mt-24">
+            <div class="bg-white rounded-xl shadow-sm border border-stone-200 overflow-hidden">
+                <div class="p-6 border-b border-stone-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-stone-800">Reference Data</h2>
+                        <p class="text-sm text-stone-500">Full list of universities with A-Class ratings in at least one
+                            technical discipline.</p>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto custom-scrollbar">
+                    <table class="w-full text-left border-collapse min-w-[700px]">
+                        <thead>
+                            <tr
+                                class="bg-stone-50 border-b border-stone-200 text-xs text-stone-500 uppercase tracking-wider">
+                                <th class="px-6 py-4 font-semibold">University</th>
+                                <th class="px-6 py-4 font-semibold">Region</th>
+                                <th class="px-6 py-4 font-semibold text-cyan-600">Computer Sci</th>
+                                <th class="px-6 py-4 font-semibold text-indigo-600">Software Eng</th>
+                                <th class="px-6 py-4 font-semibold text-amber-600">Statistics</th>
+                                <th class="px-6 py-4 font-semibold text-emerald-600">Mathematics</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-table-body" class="text-sm divide-y divide-stone-100">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-12 text-center text-sm">
+        <div class="container mx-auto px-4">
+            <p class="mb-2 font-medium text-stone-300">© 2026 Education Data Visualization Project</p>
+            <p class="text-xs opacity-60">
+                Source: China Ministry of Education 4th Round Discipline Evaluation.
+                <br>
+                Note: Grades represent a tier (A+ top 2%, A top 5%, A- top 10%). Visual scores are approximations for
+                comparison.
+            </p>
+        </div>
+    </footer>
+
+    <!-- LOGIC -->
+    <script>
+        // --- DATA SOURCE ---
+        // Score Mapping for Charts: A+=95, A=90, A-=85, None=0 (or 60 for baseline viz)
+        const SCORES = { 'A+': 95, 'A': 90, 'A-': 85, '-': 65 };
+
+        // Comprehensive Dataset based on Source Report
+        const universities = [
+            { id: 'pku', name: 'Peking Univ', cn: '北京大学', region: 'Beijing', cs: 'A+', se: 'A', stat: 'A+', math: 'A+' },
+            { id: 'thu', name: 'Tsinghua Univ', cn: '清华大学', region: 'Beijing', cs: 'A+', se: 'A', stat: '-', math: 'A' },
+            { id: 'zju', name: 'Zhejiang Univ', cn: '浙江大学', region: 'East', cs: 'A+', se: 'A+', stat: '-', math: 'A-' },
+            { id: 'nudt', name: 'NUDT', cn: '国防科大', region: 'Central', cs: 'A+', se: 'A+', stat: '-', math: '-' },
+            { id: 'buaa', name: 'Beihang Univ', cn: '北航', region: 'Beijing', cs: 'A', se: 'A+', stat: '-', math: '-' },
+            { id: 'sjtu', name: 'Shanghai Jiao Tong', cn: '上海交大', region: 'East', cs: 'A', se: 'A-', stat: 'A-', math: 'A' },
+            { id: 'nju', name: 'Nanjing Univ', cn: '南京大学', region: 'East', cs: 'A', se: 'A', stat: '-', math: 'A-' },
+            { id: 'hit', name: 'Harbin Inst. Tech', cn: '哈尔滨工业大学', region: 'North', cs: 'A', se: 'A-', stat: '-', math: 'A-' },
+            { id: 'ruc', name: 'Renmin Univ', cn: '人大', region: 'Beijing', cs: '-', se: '-', stat: 'A+', math: '-' },
+            { id: 'fdu', name: 'Fudan Univ', cn: '复旦大学', region: 'East', cs: '-', se: '-', stat: '-', math: 'A+' },
+            { id: 'sdu', name: 'Shandong Univ', cn: '山东大学', region: 'East', cs: '-', se: '-', stat: '-', math: 'A+' },
+            { id: 'ustc', name: 'USTC', cn: '中科大', region: 'East', cs: 'A-', se: '-', stat: 'A-', math: 'A' },
+            { id: 'nankai', name: 'Nankai Univ', cn: '南开大学', region: 'North', cs: '-', se: '-', stat: 'A', math: 'A' },
+            { id: 'tongji', name: 'Tongji Univ', cn: '同济大学', region: 'East', cs: 'A-', se: 'A-', stat: '-', math: '-' },
+            { id: 'whu', name: 'Wuhan Univ', cn: '武汉大学', region: 'Central', cs: 'A-', se: 'A', stat: '-', math: 'A-' },
+            { id: 'hust', name: 'HUST', cn: '华中科技', region: 'Central', cs: 'A', se: '-', stat: '-', math: '-' },
+            { id: 'ecnu', name: 'East China Normal', cn: '华东师范', region: 'East', cs: '-', se: 'A', stat: 'A', math: '-' }
+        ];
+
+        // --- CHART CONFIG DEFAULTS ---
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = '#78716C';
+        Chart.defaults.scale.grid.color = '#E7E5E4';
+
+        // --- STATE ---
+        let disciplineChartInstance = null;
+        let radarChartInstance = null;
+        let compareChartInstance = null;
+        let regionChartInstance = null;
+
+        // --- HELPER FUNCTIONS ---
+        const getScore = (grade) => SCORES[grade] || 0;
+        const getColor = (grade) => {
+            if (grade === 'A+') return '#6366F1'; // Indigo
+            if (grade === 'A') return '#818CF8';  // Light Indigo
+            return '#A5B4FC'; // Pale Indigo
+        };
+
+        // --- 1. DISCIPLINE CHART LOGIC ---
+        function updateDisciplineChart(discipline) {
+            // Update Tabs UI
+            document.querySelectorAll('.btn-tab').forEach(b => b.classList.remove('active'));
+            document.getElementById(`btn-${discipline}`).classList.add('active');
+
+            // Filter Data
+            const data = universities
+                .filter(u => u[discipline] && u[discipline] !== '-')
+                .sort((a, b) => getScore(b[discipline]) - getScore(a[discipline]))
+                .slice(0, 8); // Top 8 only for cleaner viz
+
+            // Prepare Chart Data
+            const labels = data.map(u => [u.name, u.cn]); // Multiline labels
+            const scores = data.map(u => getScore(u[discipline]));
+            const bgColors = data.map(u => getColor(u[discipline]));
+
+            const ctx = document.getElementById('disciplineChart').getContext('2d');
+
+            if (disciplineChartInstance) disciplineChartInstance.destroy();
+
+            disciplineChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Evaluation Score',
+                        data: scores,
+                        backgroundColor: bgColors,
+                        borderRadius: 6,
+                        barThickness: 24,
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Horizontal bar
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: (ctx) => {
+                                    const grade = data[ctx.dataIndex][discipline];
+                                    return `Grade: ${grade} (Viz Score: ${ctx.raw})`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { min: 80, max: 100, grid: { display: false } },
+                        y: {
+                            ticks: {
+                                font: { size: 11, weight: 500 },
+                                color: '#44403C'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Update Text
+            const titles = {
+                'cs': 'Computer Science Leaders',
+                'se': 'Software Engineering Giants',
+                'stat': 'Statistics Powerhouses',
+                'math': 'Mathematics Foundations'
+            };
+            document.getElementById('chart-title').innerText = titles[discipline];
+        }
+
+        // --- 2. RADAR CHART LOGIC ---
+        function updateRadarChart() {
+            const uniId = document.getElementById('uni-select').value;
+            const uni = universities.find(u => u.id === uniId);
+
+            // Update Stats Box
+            const statsHtml = `
+                <div class="p-3 bg-indigo-50 rounded-lg border border-indigo-100 text-center">
+                    <div class="text-[10px] text-indigo-400 uppercase font-bold tracking-wider">CS</div>
+                    <div class="text-lg font-bold text-indigo-700">${uni.cs}</div>
+                </div>
+                <div class="p-3 bg-indigo-50 rounded-lg border border-indigo-100 text-center">
+                    <div class="text-[10px] text-indigo-400 uppercase font-bold tracking-wider">Software</div>
+                    <div class="text-lg font-bold text-indigo-700">${uni.se}</div>
+                </div>
+                <div class="p-3 bg-stone-100 rounded-lg border border-stone-200 text-center">
+                    <div class="text-[10px] text-stone-400 uppercase font-bold tracking-wider">Stats</div>
+                    <div class="text-lg font-bold text-stone-600">${uni.stat}</div>
+                </div>
+                <div class="p-3 bg-stone-100 rounded-lg border border-stone-200 text-center">
+                    <div class="text-[10px] text-stone-400 uppercase font-bold tracking-wider">Math</div>
+                    <div class="text-lg font-bold text-stone-600">${uni.math}</div>
+                </div>
+            `;
+            document.getElementById('uni-stats').innerHTML = statsHtml;
+
+            // Chart Data
+            const dataPoints = [
+                getScore(uni.cs),
+                getScore(uni.se),
+                getScore(uni.stat),
+                getScore(uni.math)
+            ];
+
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            if (radarChartInstance) radarChartInstance.destroy();
+
+            radarChartInstance = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['CS', 'Software', 'Statistics', 'Math'],
+                    datasets: [{
+                        label: uni.name,
+                        data: dataPoints,
+                        backgroundColor: 'rgba(99, 102, 241, 0.2)', // Indigo low opacity
+                        borderColor: '#6366F1',
+                        pointBackgroundColor: '#6366F1',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#6366F1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#E5E7EB' },
+                            grid: { color: '#E5E7EB' },
+                            pointLabels: {
+                                font: { size: 12, weight: 'bold' },
+                                color: '#44403C'
+                            },
+                            suggestedMin: 60,
+                            suggestedMax: 100,
+                            ticks: { display: false } // Hide numbers on axis
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        // --- 3. COMPARE CHART LOGIC ---
+        function updateCompareChart() {
+            const id1 = document.getElementById('comp-1').value;
+            const id2 = document.getElementById('comp-2').value;
+            const u1 = universities.find(u => u.id === id1);
+            const u2 = universities.find(u => u.id === id2);
+
+            const ctx = document.getElementById('compareChart').getContext('2d');
+            if (compareChartInstance) compareChartInstance.destroy();
+
+            compareChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Comp Sci', 'Software', 'Statistics', 'Math'],
+                    datasets: [
+                        {
+                            label: u1.name,
+                            data: [getScore(u1.cs), getScore(u1.se), getScore(u1.stat), getScore(u1.math)],
+                            backgroundColor: '#14B8A6' // Teal
+                        },
+                        {
+                            label: u2.name,
+                            data: [getScore(u2.cs), getScore(u2.se), getScore(u2.stat), getScore(u2.math)],
+                            backgroundColor: '#F59E0B' // Amber
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { min: 60, max: 100 },
+                        x: { grid: { display: false } }
+                    },
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                label: (ctx) => {
+                                    const u = ctx.datasetIndex === 0 ? u1 : u2;
+                                    const fields = ['cs', 'se', 'stat', 'math'];
+                                    const field = fields[ctx.dataIndex];
+                                    return `${u.name}: ${u[field]} (Viz: ${ctx.raw})`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // --- 4. REGION CHART LOGIC ---
+        function initRegionChart() {
+            // Aggregate Data
+            const regions = {};
+            universities.forEach(u => {
+                regions[u.region] = (regions[u.region] || 0) + 1;
+            });
+
+            const ctx = document.getElementById('regionChart').getContext('2d');
+            regionChartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(regions),
+                    datasets: [{
+                        data: Object.values(regions),
+                        backgroundColor: [
+                            '#6366F1', // Indigo (Beijing typically has most)
+                            '#14B8A6', // Teal
+                            '#F43F5E', // Rose
+                            '#F59E0B', // Amber
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '75%',
+                    plugins: {
+                        legend: { position: 'right', labels: { usePointStyle: true, font: { size: 11 } } }
+                    }
+                }
+            });
+        }
+
+        // --- 5. POPULATE DATA ---
+        function populateUI() {
+            // Dropdowns
+            const uniSelect = document.getElementById('uni-select');
+            const comp1 = document.getElementById('comp-1');
+            const comp2 = document.getElementById('comp-2');
+            const tableBody = document.getElementById('data-table-body');
+
+            universities.sort((a, b) => a.name.localeCompare(b.name)).forEach((u, index) => {
+                // Dropdown Options
+                const option = `<option value="${u.id}">${u.name} (${u.cn})</option>`;
+                uniSelect.innerHTML += option;
+                comp1.innerHTML += option;
+                comp2.innerHTML += option;
+
+                // Table Row
+                const row = `
+                    <tr class="hover:bg-stone-50 transition-colors">
+                        <td class="px-6 py-4 font-medium text-stone-800">
+                            ${u.name}<br><span class="text-xs text-stone-400">${u.cn}</span>
+                        </td>
+                        <td class="px-6 py-4 text-stone-500">${u.region}</td>
+                        <td class="px-6 py-4 font-bold text-cyan-600">${u.cs}</td>
+                        <td class="px-6 py-4 font-bold text-indigo-600">${u.se}</td>
+                        <td class="px-6 py-4 font-bold text-amber-600">${u.stat}</td>
+                        <td class="px-6 py-4 font-bold text-emerald-600">${u.math}</td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+
+            // Set specific defaults for comparison
+            comp1.value = 'pku'; // Peking
+            comp2.value = 'zju'; // Zhejiang
+        }
+
+        // --- INITIALIZATION ---
+        window.addEventListener('DOMContentLoaded', () => {
+            populateUI();
+
+            // Init Charts
+            updateDisciplineChart('cs'); // Default view
+            updateRadarChart();
+            updateCompareChart();
+            initRegionChart();
+        });
+
+    </script>
+</body>
+
+</html>
