@@ -4,6 +4,9 @@
 
 China achieved a historic trade surplus of **$1.2 trillion in 2025**, representing a 20% increase from the prior year and marking the first time any nation has exceeded the $1 trillion threshold[1][2]. This milestone occurred despite Donald Trump's escalation of tariffs to 34% on Chinese goods, challenging conventional assumptions about trade policy efficacy. The surplus is not merely a reflection of resilience but rather the convergence of five fundamental structural forces: systematic export market redirection, chronic weakness in domestic demand, currency dynamics, ambitious import substitution policies, and persistent manufacturing overcapacity driving aggressive international competition.
 
+<img width="1071" height="687" alt="image" src="https://github.com/user-attachments/assets/c9c66e52-e87f-469d-ad81-b4a8f252e81d" />
+
+
 ## The Scale of the Achievement
 
 The magnitude of China's 2025 trade surplus cannot be overstated. At $1.2 trillion, this surplus exceeds the total economic output of most nations and represents more than one-tenth of China's own GDP[3]. For comparative context, Japan's peak trade surplus in the early 1990s reached approximately $214 billion in today's dollars, while Germany's post-financial crisis peak topped around $364 billion—both dwarfed by China's current levels[2]. In 2025 alone, China recorded monthly surpluses exceeding $100 billion on seven occasions, compared to just once in 2024[1].
@@ -13,6 +16,7 @@ This achievement is particularly striking given the geopolitical environment. Th
 ## Driver One: Strategic Export Market Redirection
 
 The most immediate explanation for China's record surplus lies not in export growth per se, but in extraordinary diversification away from the United States. US-bound exports plummeted 20% in 2025[5][6], a decline that would have been catastrophic under normal circumstances. Instead, Chinese manufacturers seamlessly redirected shipments to alternative markets, more than compensating for lost American sales.
+<img width="1071" height="687" alt="image" src="https://github.com/user-attachments/assets/30b37d61-b255-49dc-aecb-2f48787776d0" />
 
 ### Regional Export Reorientation (2025 vs 2024)
 
@@ -56,6 +60,7 @@ China's ambitious "Made in China 2025" (MIC25) industrial policy explicitly targ
 - **Semiconductors**: China's chip self-sufficiency rate increased from 5% in 2018 to nearly 30% by 2024[4], with the government mandating that major automakers increase local chip procurement to 20-25% by 2025[17]
 - **Automobiles**: China transitioned from net importer to net exporter of finished vehicles while simultaneously increasing net exports of auto parts[18]
 - **High-tech products**: Reliance on imported advanced technology declined significantly as domestic innovation accelerated in areas like AI chips, 5G, and renewable energy[19]
+<img width="1071" height="687" alt="image" src="https://github.com/user-attachments/assets/2718b628-c134-4c3a-aa4f-8cc422fe84cc" />
 
 This import substitution directly suppresses import growth. Rather than importing refined commodities, China increasingly imports raw materials and conducts high-end manufacturing domestically[20]. This structural shift explains why China's imports grew only 0.5% in 2025 while exports expanded 5.5%—the economy is simply importing less even as it produces more[5].
 
