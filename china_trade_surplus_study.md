@@ -4,7 +4,38 @@
 
 China achieved a historic trade surplus of **$1.2 trillion in 2025**, representing a 20% increase from the prior year and marking the first time any nation has exceeded the $1 trillion threshold[1][2]. This milestone occurred despite Donald Trump's escalation of tariffs to 34% on Chinese goods, challenging conventional assumptions about trade policy efficacy. The surplus is not merely a reflection of resilience but rather the convergence of five fundamental structural forces: systematic export market redirection, chronic weakness in domestic demand, currency dynamics, ambitious import substitution policies, and persistent manufacturing overcapacity driving aggressive international competition.
 
-<img width="1071" height="687" alt="image" src="https://github.com/user-attachments/assets/c9c66e52-e87f-469d-ad81-b4a8f252e81d" />
+<div style="font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+  <h4 style="text-align: center; margin: 0 0 5px 0; color: #666; font-size: 18px;">China's Surging Trade Surplus (2022-2025)</h4>
+  <p style="text-align: center; margin: 0 0 20px 0; color: #888; font-size: 13px;">Growth of 85% over four years reflects expanding exports</p>
+  <div style="display: flex; align-items: flex-end; justify-content: space-around; height: 220px; padding: 0 20px; border-left: 2px solid #ddd; border-bottom: 2px solid #ddd; position: relative;">
+    <div style="position: absolute; left: -45px; top: 0; font-size: 11px; color: #888;">$1200b</div>
+    <div style="position: absolute; left: -45px; top: 45px; font-size: 11px; color: #888;">$1000b</div>
+    <div style="position: absolute; left: -45px; top: 90px; font-size: 11px; color: #888;">$800b</div>
+    <div style="position: absolute; left: -45px; top: 135px; font-size: 11px; color: #888;">$600b</div>
+    <div style="position: absolute; left: -45px; top: 180px; font-size: 11px; color: #888;">$400b</div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <span style="font-size: 12px; color: #666; margin-bottom: 5px;">$650b</span>
+      <div style="background: #4ecdc4; width: 70px; height: 119px; border-radius: 4px 4px 0 0;"></div>
+      <span style="font-size: 12px; color: #666; margin-top: 8px;">2022</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <span style="font-size: 12px; color: #666; margin-bottom: 5px;">$830b</span>
+      <div style="background: #4ecdc4; width: 70px; height: 152px; border-radius: 4px 4px 0 0;"></div>
+      <span style="font-size: 12px; color: #666; margin-top: 8px;">2023</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <span style="font-size: 12px; color: #666; margin-bottom: 5px;">$992b</span>
+      <div style="background: #4ecdc4; width: 70px; height: 182px; border-radius: 4px 4px 0 0;"></div>
+      <span style="font-size: 12px; color: #666; margin-top: 8px;">2024</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <span style="font-size: 12px; color: #666; margin-bottom: 5px;">$1200b</span>
+      <div style="background: #4ecdc4; width: 70px; height: 220px; border-radius: 4px 4px 0 0;"></div>
+      <span style="font-size: 12px; color: #666; margin-top: 8px;">2025</span>
+    </div>
+  </div>
+  <p style="text-align: center; margin-top: 10px; font-size: 11px; color: #999;">Year</p>
+</div>
 
 
 ## The Scale of the Achievement
@@ -16,7 +47,79 @@ This achievement is particularly striking given the geopolitical environment. Th
 ## Driver One: Strategic Export Market Redirection
 
 The most immediate explanation for China's record surplus lies not in export growth per se, but in extraordinary diversification away from the United States. US-bound exports plummeted 20% in 2025[5][6], a decline that would have been catastrophic under normal circumstances. Instead, Chinese manufacturers seamlessly redirected shipments to alternative markets, more than compensating for lost American sales.
-<img width="1071" height="687" alt="image" src="https://github.com/user-attachments/assets/30b37d61-b255-49dc-aecb-2f48787776d0" />
+<div style="font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+  <h4 style="text-align: center; margin: 0 0 5px 0; color: #666; font-size: 18px;">China Redirects Exports as US Trade Declines (2024-2025)</h4>
+  <p style="text-align: center; margin: 0 0 20px 0; color: #888; font-size: 13px;">Africa leads growth while US market contracts sharply</p>
+  <div style="display: flex; flex-direction: column; gap: 12px; padding: 0 10px;">
+    <div style="display: flex; align-items: center; height: 32px;">
+      <span style="width: 180px; font-size: 13px; color: #555; text-align: right; padding-right: 15px;">Africa</span>
+      <div style="flex: 1; display: flex; align-items: center;">
+        <div style="width: 50%; display: flex; justify-content: flex-end;"></div>
+        <div style="width: 1px; height: 32px; background: #999;"></div>
+        <div style="width: 50%; display: flex; align-items: center;">
+          <div style="background: #4ecdc4; height: 28px; width: 86%; border-radius: 0 4px 4px 0; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;">
+            <span style="color: white; font-weight: bold; font-size: 12px;">+25.8%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; height: 32px;">
+      <span style="width: 180px; font-size: 13px; color: #555; text-align: right; padding-right: 15px;">Southeast Asia (ASEAN)</span>
+      <div style="flex: 1; display: flex; align-items: center;">
+        <div style="width: 50%; display: flex; justify-content: flex-end;"></div>
+        <div style="width: 1px; height: 32px; background: #999;"></div>
+        <div style="width: 50%; display: flex; align-items: center;">
+          <div style="background: #4ecdc4; height: 28px; width: 45%; border-radius: 0 4px 4px 0; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;">
+            <span style="color: white; font-weight: bold; font-size: 12px;">+13.4%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; height: 32px;">
+      <span style="width: 180px; font-size: 13px; color: #555; text-align: right; padding-right: 15px;">European Union</span>
+      <div style="flex: 1; display: flex; align-items: center;">
+        <div style="width: 50%; display: flex; justify-content: flex-end;"></div>
+        <div style="width: 1px; height: 32px; background: #999;"></div>
+        <div style="width: 50%; display: flex; align-items: center;">
+          <div style="background: #4ecdc4; height: 28px; width: 28%; border-radius: 0 4px 4px 0; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;">
+            <span style="color: white; font-weight: bold; font-size: 12px;">+8.4%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; height: 32px;">
+      <span style="width: 180px; font-size: 13px; color: #555; text-align: right; padding-right: 15px;">Latin America</span>
+      <div style="flex: 1; display: flex; align-items: center;">
+        <div style="width: 50%; display: flex; justify-content: flex-end;"></div>
+        <div style="width: 1px; height: 32px; background: #999;"></div>
+        <div style="width: 50%; display: flex; align-items: center;">
+          <div style="background: #4ecdc4; height: 28px; width: 25%; border-radius: 0 4px 4px 0; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;">
+            <span style="color: white; font-weight: bold; font-size: 12px;">+7.4%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; height: 32px;">
+      <span style="width: 180px; font-size: 13px; color: #555; text-align: right; padding-right: 15px;">United States</span>
+      <div style="flex: 1; display: flex; align-items: center;">
+        <div style="width: 50%; display: flex; justify-content: flex-end; align-items: center;">
+          <div style="background: #e07a5f; height: 28px; width: 67%; border-radius: 4px 0 0 4px; display: flex; align-items: center; padding-left: 8px;">
+            <span style="color: white; font-weight: bold; font-size: 12px;">-20.0%</span>
+          </div>
+        </div>
+        <div style="width: 1px; height: 32px; background: #999;"></div>
+        <div style="width: 50%;"></div>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center; margin-top: 15px; font-size: 11px; color: #888;">
+    <span style="margin: 0 20px;">-20%</span>
+    <span style="margin: 0 20px;">-10%</span>
+    <span style="margin: 0 20px;">0%</span>
+    <span style="margin: 0 20px;">20%</span>
+  </div>
+  <p style="text-align: center; margin-top: 5px; font-size: 11px; color: #999;">Growth (%)</p>
+</div>
 
 ### Regional Export Reorientation (2025 vs 2024)
 
@@ -60,7 +163,61 @@ China's ambitious "Made in China 2025" (MIC25) industrial policy explicitly targ
 - **Semiconductors**: China's chip self-sufficiency rate increased from 5% in 2018 to nearly 30% by 2024[4], with the government mandating that major automakers increase local chip procurement to 20-25% by 2025[17]
 - **Automobiles**: China transitioned from net importer to net exporter of finished vehicles while simultaneously increasing net exports of auto parts[18]
 - **High-tech products**: Reliance on imported advanced technology declined significantly as domestic innovation accelerated in areas like AI chips, 5G, and renewable energy[19]
-<img width="1071" height="687" alt="image" src="https://github.com/user-attachments/assets/2718b628-c134-4c3a-aa4f-8cc422fe84cc" />
+<div style="font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+  <h4 style="text-align: center; margin: 0 0 5px 0; color: #666; font-size: 18px;">High-Value Products Drive Export Growth (2025 YTD)</h4>
+  <p style="text-align: center; margin: 0 0 20px 0; color: #888; font-size: 13px;">Fertilizer leads with nearly 60% expansion</p>
+  <div style="display: flex; flex-direction: column; gap: 10px; padding: 0 10px;">
+    <div style="display: flex; align-items: center; height: 28px;">
+      <span style="width: 140px; font-size: 12px; color: #555; text-align: right; padding-right: 12px;">Ceramics</span>
+      <div style="flex: 1; background: #eee; border-radius: 4px; height: 24px; position: relative;">
+        <div style="background: #c1121f; height: 100%; width: 1.3%; border-radius: 4px; min-width: 8px;"></div>
+        <span style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); font-size: 11px; color: #666;">+0.8%</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; height: 28px;">
+      <span style="width: 140px; font-size: 12px; color: #555; text-align: right; padding-right: 12px;">Agricultural Products</span>
+      <div style="flex: 1; background: #eee; border-radius: 4px; height: 24px; position: relative;">
+        <div style="background: #e9c46a; height: 100%; width: 2.3%; border-radius: 4px; min-width: 10px;"></div>
+        <span style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); font-size: 11px; color: #666;">+1.4%</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; height: 28px;">
+      <span style="width: 140px; font-size: 12px; color: #555; text-align: right; padding-right: 12px;">Automobiles</span>
+      <div style="flex: 1; background: #eee; border-radius: 4px; height: 24px; position: relative;">
+        <div style="background: #577590; height: 100%; width: 18%; border-radius: 4px;"></div>
+        <span style="position: absolute; left: calc(18% + 8px); top: 50%; transform: translateY(-50%); font-size: 11px; color: #666;">+10.8%</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; height: 28px;">
+      <span style="width: 140px; font-size: 12px; color: #555; text-align: right; padding-right: 12px;">Ships</span>
+      <div style="flex: 1; background: #eee; border-radius: 4px; height: 24px; position: relative;">
+        <div style="background: #43aa8b; height: 100%; width: 36%; border-radius: 4px;"></div>
+        <span style="position: absolute; left: calc(36% + 8px); top: 50%; transform: translateY(-50%); font-size: 11px; color: #666;">+21.4%</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; height: 28px;">
+      <span style="width: 140px; font-size: 12px; color: #555; text-align: right; padding-right: 12px;">Integrated Circuits</span>
+      <div style="flex: 1; background: #eee; border-radius: 4px; height: 24px; position: relative;">
+        <div style="background: #e07a5f; height: 100%; width: 39%; border-radius: 4px;"></div>
+        <span style="position: absolute; left: calc(39% + 8px); top: 50%; transform: translateY(-50%); font-size: 11px; color: #666;">+23.3%</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; height: 28px;">
+      <span style="width: 140px; font-size: 12px; color: #555; text-align: right; padding-right: 12px;">Fertilizer</span>
+      <div style="flex: 1; background: #eee; border-radius: 4px; height: 24px; position: relative;">
+        <div style="background: #4ecdc4; height: 100%; width: 100%; border-radius: 4px;"></div>
+        <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 11px; color: white; font-weight: bold;">+59.6%</span>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: space-between; margin-top: 10px; padding: 0 140px 0 0; font-size: 10px; color: #888;">
+    <span style="margin-left: 140px;">0</span>
+    <span>20</span>
+    <span>40</span>
+    <span>60</span>
+  </div>
+  <p style="text-align: center; margin-top: 5px; font-size: 11px; color: #999;">Growth Rate (%)</p>
+</div>
 
 This import substitution directly suppresses import growth. Rather than importing refined commodities, China increasingly imports raw materials and conducts high-end manufacturing domestically[20]. This structural shift explains why China's imports grew only 0.5% in 2025 while exports expanded 5.5%—the economy is simply importing less even as it produces more[5].
 
